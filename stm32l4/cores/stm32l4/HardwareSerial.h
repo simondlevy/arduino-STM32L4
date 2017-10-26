@@ -96,19 +96,6 @@
 #define SERIAL_8O2_TXINV       (SERIAL_8O2 | 0x8000ul)
 #define SERIAL_8O2_RXINV_TXINV (SERIAL_8O2 | 0xC000ul)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 class HardwareSerial : public Stream
 {
   public:
