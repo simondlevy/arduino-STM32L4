@@ -39,6 +39,7 @@ public:
     Uart(struct _stm32l4_uart_t *uart, unsigned int instance, const struct _stm32l4_uart_pins_t *pins, unsigned int priority, unsigned int mode, bool serialEvent);
     void begin(unsigned long baudRate);
     void begin(unsigned long baudrate, uint16_t config);
+    void beginInverted(unsigned long baudrate, uint16_t config);
     void begin(unsigned long baudRate, uint8_t *buffer, size_t size);
     void begin(unsigned long baudrate, uint16_t config, uint8_t *buffer, size_t size);
     void end();
