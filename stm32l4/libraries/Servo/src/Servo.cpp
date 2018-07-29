@@ -31,6 +31,9 @@ static stm32l4_servo_table_t ServoTable;
 
 static void servo_event_callback(void *context, uint32_t events)
 {
+    (void)context;
+    (void)events;
+
     if (ServoSync)
     {
 	ServoSync = 0;
