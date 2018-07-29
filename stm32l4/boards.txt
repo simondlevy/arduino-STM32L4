@@ -301,7 +301,7 @@ Ladybug-L432KC.build.vid=0x1209
 Ladybug-L432KC.build.pid=0x6669
 Ladybug-L432KC.build.did=0xffff
 Ladybug-L432KC.build.usb_manufacturer="Tlera Corporation"
-Ladybug-L432KC.build.usb_product="Ladybug"
+Ladybug-L432KC.build.usb_product="LadybugFC"
 Ladybug-L432KC.build.extra_flags=-DSTM32L432xx -D__FPU_PRESENT=1 -march=armv7e-m -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -mabi=aapcs -mslow-flash-data -fsingle-precision-constant {build.usb_flags} {build.dosfs_flags}
 Ladybug-L432KC.build.ldscript=linker_scripts/STM32L432KC_FLASH.ld
 Ladybug-L432KC.build.openocdscript=openocd_scripts/stm32l432kc_ladybug.cfg
@@ -362,6 +362,91 @@ Ladybug-L432KC.menu.opt.o2.build.flags.ldspecs=
 Ladybug-L432KC.menu.opt.o3=Fastest
 Ladybug-L432KC.menu.opt.o3.build.flags.optimize=-O3
 Ladybug-L432KC.menu.opt.o3.build.flags.ldspecs=
+
+
+# Tlera Ladybug Flight Controller
+# ---------------------------------------
+Ladybug-L432KC-FC.name=Ladybug Flight Controller
+Ladybug-L432KC-FC.vid.0=0x1209
+Ladybug-L432KC-FC.pid.0=0x6669
+
+Ladybug-L432KC-FC.upload.tool=stm32l4_dfu
+Ladybug-L432KC-FC.upload.protocol=dfu
+Ladybug-L432KC-FC.upload.maximum_size=245760
+Ladybug-L432KC-FC.upload.use_1200bps_touch=true
+Ladybug-L432KC-FC.upload.wait_for_upload_port=false
+Ladybug-L432KC-FC.upload.native_usb=false
+
+Ladybug-L432KC-FC.build.mcu=cortex-m4
+Ladybug-L432KC-FC.build.f_cpu=80000000L
+Ladybug-L432KC-FC.build.board=STM32L4_LADYBUG
+Ladybug-L432KC-FC.build.arch=STM32L4
+Ladybug-L432KC-FC.build.core=stm32l4
+Ladybug-L432KC-FC.build.vid=0x1209
+Ladybug-L432KC-FC.build.pid=0x6669
+Ladybug-L432KC-FC.build.did=0xffff
+Ladybug-L432KC-FC.build.usb_manufacturer="Tlera Corporation"
+Ladybug-L432KC-FC.build.usb_product="LadybugFC"
+Ladybug-L432KC-FC.build.extra_flags=-DSTM32L432xx -D__FPU_PRESENT=1 -march=armv7e-m -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -mabi=aapcs -mslow-flash-data -fsingle-precision-constant {build.usb_flags} {build.dosfs_flags}
+Ladybug-L432KC-FC.build.ldscript=linker_scripts/STM32L432KC_FLASH.ld
+Ladybug-L432KC-FC.build.openocdscript=openocd_scripts/stm32l432kc_ladybug.cfg
+Ladybug-L432KC-FC.build.variant=STM32L432KC-Ladybug-FC
+Ladybug-L432KC-FC.build.variant_system_libs="-L{runtime.platform.path}/system/STM32L4xx/Lib" "-L{runtime.platform.path}/system/CMSIS/Lib" -lstm32l432 -larm_cortexM4lf_math
+Ladybug-L432KC-FC.build.variant_system_include="-I{runtime.platform.path}/system/CMSIS/Include" "-I{runtime.platform.path}/system/CMSIS/Device/ST/STM32L4xx/Include" "-I{runtime.platform.path}/system/STM32L4xx/Include" 
+
+Ladybug-L432KC-FC.menu.usb.cdc=Serial
+Ladybug-L432KC-FC.menu.usb.cdc.build.usb_type=USB_TYPE_CDC
+Ladybug-L432KC-FC.menu.usb.cdc_msc=Serial + Mass Storage
+Ladybug-L432KC-FC.menu.usb.cdc_msc.build.usb_type=USB_TYPE_CDC_MSC
+Ladybug-L432KC-FC.menu.usb.cdc_hid=Serial + Keyboard + Mouse
+Ladybug-L432KC-FC.menu.usb.cdc_hid.build.usb_type=USB_TYPE_CDC_HID
+Ladybug-L432KC-FC.menu.usb.cdc_msc_hid=Serial + Mass Storage + Keyboard + Mouse
+Ladybug-L432KC-FC.menu.usb.cdc_msc_hid.build.usb_type=USB_TYPE_CDC_MSC_HID
+Ladybug-L432KC-FC.menu.usb.none=No USB
+Ladybug-L432KC-FC.menu.usb.none.build.usb_type=USB_TYPE_NONE
+
+Ladybug-L432KC-FC.menu.dosfs.none=None
+Ladybug-L432KC-FC.menu.dosfs.none.build.dosfs_sdcard=0
+Ladybug-L432KC-FC.menu.dosfs.none.build.dosfs_sflash=0
+Ladybug-L432KC-FC.menu.dosfs.sdspi=SDCARD (SPI)
+Ladybug-L432KC-FC.menu.dosfs.sdspi.build.dosfs_sdcard=1
+Ladybug-L432KC-FC.menu.dosfs.sdspi.build.dosfs_sflash=0
+
+Ladybug-L432KC-FC.menu.speed.80=80 MHz
+Ladybug-L432KC-FC.menu.speed.80.build.f_cpu=80000000L
+Ladybug-L432KC-FC.menu.speed.72=72 MHz
+Ladybug-L432KC-FC.menu.speed.72.build.f_cpu=72000000L
+Ladybug-L432KC-FC.menu.speed.64=64 MHz
+Ladybug-L432KC-FC.menu.speed.64.build.f_cpu=64000000L
+Ladybug-L432KC-FC.menu.speed.48=48 MHz
+Ladybug-L432KC-FC.menu.speed.48.build.f_cpu=48000000L
+Ladybug-L432KC-FC.menu.speed.32=32 MHz
+Ladybug-L432KC-FC.menu.speed.32.build.f_cpu=32000000L
+Ladybug-L432KC-FC.menu.speed.24=24 MHz
+Ladybug-L432KC-FC.menu.speed.24.build.f_cpu=24000000L
+Ladybug-L432KC-FC.menu.speed.16=16 MHz (No USB)
+Ladybug-L432KC-FC.menu.speed.16.build.f_cpu=16000000L
+Ladybug-L432KC-FC.menu.speed.8=8 MHz (No USB)
+Ladybug-L432KC-FC.menu.speed.8.build.f_cpu=8000000L
+Ladybug-L432KC-FC.menu.speed.4=4 MHz (No USB)
+Ladybug-L432KC-FC.menu.speed.4.build.f_cpu=4000000L
+Ladybug-L432KC-FC.menu.speed.2=2 MHz (No USB)
+Ladybug-L432KC-FC.menu.speed.2.build.f_cpu=2000000L
+Ladybug-L432KC-FC.menu.speed.1=1 MHz (No USB)
+Ladybug-L432KC-FC.menu.speed.1.build.f_cpu=1000000L
+
+Ladybug-L432KC-FC.menu.opt.os=Smallest Code
+Ladybug-L432KC-FC.menu.opt.os.build.flags.optimize=-Os
+Ladybug-L432KC-FC.menu.opt.os.build.flags.ldspecs=--specs=nano.specs
+Ladybug-L432KC-FC.menu.opt.o1=Fast
+Ladybug-L432KC-FC.menu.opt.o1.build.flags.optimize=-O1
+Ladybug-L432KC-FC.menu.opt.o1.build.flags.ldspecs=
+Ladybug-L432KC-FC.menu.opt.o2=Faster
+Ladybug-L432KC-FC.menu.opt.o2.build.flags.optimize=-O2
+Ladybug-L432KC-FC.menu.opt.o2.build.flags.ldspecs=
+Ladybug-L432KC-FC.menu.opt.o3=Fastest
+Ladybug-L432KC-FC.menu.opt.o3.build.flags.optimize=-O3
+Ladybug-L432KC-FC.menu.opt.o3.build.flags.ldspecs=
 
 
 # ST NUCLEO-L432KC
