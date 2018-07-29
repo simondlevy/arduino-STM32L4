@@ -65,7 +65,7 @@ extern const PinDescription g_APinDescription[NUM_TOTAL_PINS] =
     // 14..19 - Analog pins
     { GPIOA, GPIO_PIN_MASK(GPIO_PIN_PA4),  GPIO_PIN_PA4,             (PIN_ATTR_ADC | PIN_ATTR_DAC | PIN_ATTR_EXTI),   PWM_INSTANCE_NONE,  PWM_CHANNEL_NONE, ADC_INPUT_9    },
     { GPIOA, GPIO_PIN_MASK(GPIO_PIN_PA5),  GPIO_PIN_PA5,             (PIN_ATTR_ADC | PIN_ATTR_DAC | PIN_ATTR_EXTI),   PWM_INSTANCE_NONE,  PWM_CHANNEL_NONE, ADC_INPUT_10   },
-    { GPIOA, GPIO_PIN_MASK(GPIO_PIN_PA0),  GPIO_PIN_PA0_TIM2_CH1,    (PIN_ATTR_ADC | PIN_ATTR_PWM | PIN_ATTR_EXTI | PIN_ATTR_WKUP1), PWM_INSTANCE_TIM2, PWM_CHANNEL_1, ADC_INPUT_5 },
+    { GPIOA, GPIO_PIN_MASK(GPIO_PIN_PA0),  GPIO_PIN_PA0,             (PIN_ATTR_ADC | PIN_ATTR_EXTI | PIN_ATTR_WKUP1), PWM_INSTANCE_NONE,  PWM_CHANNEL_NONE, ADC_INPUT_5    },
     { GPIOB, GPIO_PIN_MASK(GPIO_PIN_PB0),  GPIO_PIN_PB0,             (PIN_ATTR_ADC | PIN_ATTR_EXTI),                  PWM_INSTANCE_NONE,  PWM_CHANNEL_NONE, ADC_INPUT_15   },
     { GPIOB, GPIO_PIN_MASK(GPIO_PIN_PB1),  GPIO_PIN_PB1,             (PIN_ATTR_ADC | PIN_ATTR_EXTI),                  PWM_INSTANCE_NONE,  PWM_CHANNEL_NONE, ADC_INPUT_16   },
     { NULL,  0,                            GPIO_PIN_NONE,            0,                                               PWM_INSTANCE_NONE,  PWM_CHANNEL_NONE, ADC_INPUT_NONE },
@@ -120,13 +120,10 @@ extern const stm32l4_uart_pins_t g_Serial2Pins = { GPIO_PIN_PA3_USART2_RX, GPIO_
 extern const unsigned int g_Serial2Instance = UART_INSTANCE_USART2;
 extern const unsigned int g_Serial2Mode = UART_MODE_RX_DMA;
 
-extern const stm32l4_spi_pins_t g_SPIPins = { GPIO_PIN_PA7_SPI1_MOSI, GPIO_PIN_PA6_SPI1_MISO, GPIO_PIN_PA1_SPI1_SCK, GPIO_PIN_NONE };
+
+extern const stm32l4_spi_pins_t g_SPIPins = { GPIO_PIN_PB5_SPI1_MOSI, GPIO_PIN_PB4_SPI1_MISO, GPIO_PIN_PA5_SPI1_SCK, GPIO_PIN_NONE };
 extern const unsigned int g_SPIInstance = SPI_INSTANCE_SPI1;
 extern const unsigned int g_SPIMode = SPI_MODE_RX_DMA | SPI_MODE_TX_DMA | SPI_MODE_RX_DMA_SECONDARY | SPI_MODE_TX_DMA_SECONDARY;
-
-extern const stm32l4_spi_pins_t g_SPI1Pins = { GPIO_PIN_PB5_SPI3_MOSI, GPIO_PIN_PB4_SPI3_MISO, GPIO_PIN_PB3_SPI3_SCK, GPIO_PIN_NONE };
-extern const unsigned int g_SPI1Instance = SPI_INSTANCE_SPI3;
-extern const unsigned int g_SPI1Mode = SPI_MODE_RX_DMA | SPI_MODE_TX_DMA | SPI_MODE_RX_DMA_SECONDARY | SPI_MODE_TX_DMA_SECONDARY;
 
 
 extern const stm32l4_i2c_pins_t g_WirePins = { GPIO_PIN_PB6_I2C1_SCL, GPIO_PIN_PB7_I2C1_SDA };
