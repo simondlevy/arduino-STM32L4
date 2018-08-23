@@ -121,11 +121,24 @@ static const uint8_t ATN = PIN_ATN;
 /*
  * SPI Interfaces
  */
+
+#define SPI_INTERFACES_COUNT 2
+
+#define PIN_SPI_MISO         (12u)
+#define PIN_SPI_MOSI         (11u)
+#define PIN_SPI_SCK          (13u)
+
+#define PIN_SPI1_MISO        (4u)
+#define PIN_SPI1_MOSI        (5u)
+#define PIN_SPI1_SCK         (3u)
+
+/*
 #define SPI_INTERFACES_COUNT 1
 
 #define PIN_SPI1_MISO        (4u)
 #define PIN_SPI1_MOSI        (5u)
 #define PIN_SPI1_SCK         (15u)
+*/
 
 static const uint8_t SS	  = 10;
 static const uint8_t MOSI = PIN_SPI1_MOSI;
