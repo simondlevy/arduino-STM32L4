@@ -151,6 +151,8 @@ void SPIClass::endTransaction(void)
 
 void SPIClass::setBitOrder(BitOrder bitOrder)
 {
+    (void)bitOrder;
+
     if (_selected) {
 	stm32l4_spi_unselect(_spi);
     
@@ -376,6 +378,8 @@ uint16_t SPIClass::_exchange16Select(struct _stm32l4_spi_t *spi, uint16_t data)
 
 void SPIClass::EventCallback(uint32_t events)
 {
+    (void)events;
+
     void(*callback)(void);
   
     callback = _completionCallback;
