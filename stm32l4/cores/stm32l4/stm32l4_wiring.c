@@ -117,6 +117,7 @@ void init( void )
     stm32l4_sdmmc_initialize(STM32L4_SDMMC_OPTION_HIGH_SPEED);
 #endif
 #if (DOSFS_SFLASH >= 1)
+    void dosfs_sflash_init();
     dosfs_sflash_init();
 #endif
 
