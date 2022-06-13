@@ -37,6 +37,7 @@
 
 typedef void (*armv7m_systick_callback_t)(void *context, uint32_t heartbeat);
 
+extern uint64_t armv7m_systick_ticks(void); // sdl
 extern uint64_t armv7m_systick_millis(void);
 extern uint64_t armv7m_systick_micros(void);
 extern void armv7m_systick_delay(uint32_t delay);

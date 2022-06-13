@@ -47,6 +47,12 @@ typedef struct _armv7m_systick_control_t {
 
 static armv7m_systick_control_t armv7m_systick_control;
 
+// sdl
+uint64_t armv7m_systick_ticks(void)
+{
+    return SysTick->VAL;
+}
+
 uint64_t armv7m_systick_millis(void)
 {
     return armv7m_systick_control.millis;

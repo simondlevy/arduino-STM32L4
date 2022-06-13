@@ -1,4 +1,4 @@
-TOOLS    = /opt/gcc-arm-none-eabi-4.8.3-2014q1
+TOOLS    = /opt/gcc-arm-11.2-2022.02-x86_64-arm-none-eabi
 CPP      = $(TOOLS)/bin/arm-none-eabi-cpp
 CC       = $(TOOLS)/bin/arm-none-eabi-gcc
 CXX      = $(TOOLS)/bin/arm-none-eabi-g++
@@ -172,4 +172,5 @@ clean::
 -include $(LOBJS_L476:.o=.d)
 -include $(LOBJS_L496:.o=.d)
 
-
+install: *.a
+	cp *.a ../Lib

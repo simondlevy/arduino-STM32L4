@@ -49,6 +49,12 @@ static inline  void noInterrupts(void)
     __asm__ volatile ("cpsid i" : : : "memory");
 }
 
+// sdl
+static inline uint32_t ticks(void) 
+{
+    return armv7m_systick_ticks();
+}
+
 static inline uint32_t millis(void) 
 {
     return armv7m_systick_millis();
